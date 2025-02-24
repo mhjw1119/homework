@@ -8,14 +8,13 @@ for test_case in range(1, T +1):
     arr,check = list(input().split())
     N = len(check)
     count = 0
-    for i in range(len(arr)):
+    for i in range(len(arr)-N+1):
         if arr[i] == check[0] and arr[N-1+i] == check[N-1] :
-            for x in range(1,(N//2)+1) :
+            for x in range((N//2)) :
                 if arr[i+x] == check[x] and arr[i+N-1-x] == check[N-1-x] :
-                    if x == (N//2) :
+                    if x == (N//2)-1 :
                         count += 1
                 else:
                     break
     result = len(arr)-((N-1)*count)
-
     print(f'#{test_case} {result}')
