@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f98599-4430-40d8-b2b8-631f9bb12e1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/21617/4866괄호검사.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2005/파스칼의 삼각형.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/21649/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/21649/그래프 탐색.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../week1/python_ws_3_4" beforeDir="false" afterPath="$PROJECT_DIR$/../week1/python_ws_3_4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../새 폴더/python_ws_6_4" beforeDir="false" afterPath="$PROJECT_DIR$/../새 폴더/python_ws_6_4" afterDir="false" />
@@ -34,7 +36,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.4866괄호검사">
+  <component name="RunManager" selected="Python.그래프 탐색">
     <configuration name="반복문자 지우기" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="swea" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -56,7 +58,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="가장 빠른 문자열 타이핑" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="그래프 탐색" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="swea" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -64,11 +66,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/3143" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/21649" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/3143/가장 빠른 문자열 타이핑.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/21649/그래프 탐색.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.그래프 탐색" />
         <item itemvalue="Python.4866괄호검사" />
         <item itemvalue="Python.반복문자 지우기" />
         <item itemvalue="Python.비밀번호" />
         <item itemvalue="Python.qualho" />
-        <item itemvalue="Python.가장 빠른 문자열 타이핑" />
       </list>
     </recent_temporary>
   </component>
