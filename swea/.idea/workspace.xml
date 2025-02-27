@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f98599-4430-40d8-b2b8-631f9bb12e1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/1219/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1219/길찾기.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../week1/python_ws_3_4" beforeDir="false" afterPath="$PROJECT_DIR$/../week1/python_ws_3_4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../새 폴더/python_ws_6_4" beforeDir="false" afterPath="$PROJECT_DIR$/../새 폴더/python_ws_6_4" afterDir="false" />
     </list>
