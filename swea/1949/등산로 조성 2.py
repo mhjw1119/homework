@@ -17,8 +17,8 @@ dx = [1, 0, -1, 0]
 
 def dfs (check, idx, count,sp) :
     y, x = idx
-    global result
     check[y][x] = 1
+    count += 1
     result = count
     for i in range(4) :
         ny = dy[i] + y
@@ -26,21 +26,19 @@ def dfs (check, idx, count,sp) :
         if -1 < ny < N and -1 < nx < N :
             if arr[y][x] <  arr[ny][nx] and check[ny][nx] != 1 :
                 idx = [ny,nx]
-                dfs(check,idx,count+1,sp)
-                result += count
+                result = max(result,dfs(check,idx,count,sp))
                 check[ny][nx] = 0
-        if sp != 0 :
-            for j in range(4) :
-                nny = y + dy[j]
-                nnx = x + dx[j]
-                if -1 < nnx < N and -1 < nny < N :
-                    if arr[y][x] - K  < arr[nny][nnx] and check[nny][nnx] != 1 :
-                        idx = [nny,nnx]
-                        sp = 0
-                        dfs(check, idx, count+1, sp)
-                        # sp = 1
+            if sp != 0 :
+                for j in range(4) :
+                    nny = y + dy[j]
+                    nnx = x + dx[j]
+                    if -1 < nnx < N and -1 < nny < N :
+                        if arr[y][x] - K  < arr[nny][nnx] and check[nny][nnx] != 1 :
+                            idx = [nny,nnx]
+                            sp = 0
+                            result = max(result, dfs(check, idx, count, sp))
 
-    return
+    return result
 
 
 T = int(input())
@@ -51,13 +49,12 @@ for test_case in range(1,T+1) :
     real = 0
     for i in range(N) :
         for j in range(N) :
-            result = 0
             first_count = 0
             check1 = [[0] * N for _ in range(N)]
             road = [i,j]
             serp = 1
-            dfs(check1, road, first_count,serp)
-            real = max(real,result)
+            real_result = dfs(check1, road, first_count,serp)
+            real = max(real,real_result)
     print(f'#{test_case} {real}')
 
 
