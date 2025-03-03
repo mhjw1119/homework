@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f98599-4430-40d8-b2b8-631f9bb12e1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/21648/4871그래프 탐색.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/21648/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1949/등산로 조성 제대로.py" beforeDir="false" afterPath="$PROJECT_DIR$/1949/등산로 조성 제대로.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../week1/python_ws_3_4" beforeDir="false" afterPath="$PROJECT_DIR$/../week1/python_ws_3_4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../새 폴더/python_ws_6_4" beforeDir="false" afterPath="$PROJECT_DIR$/../새 폴더/python_ws_6_4" afterDir="false" />
     </list>
@@ -34,7 +35,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.등산로 조성 제대로">
+  <component name="RunManager" selected="Python.4871그래프 탐색">
     <configuration name="등산로 조성 2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="swea" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="4866괄호검사" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="4871그래프 탐색" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="swea" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -127,11 +128,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/21617" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/21648" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/21617/4866괄호검사.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/21648/4871그래프 탐색.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -205,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.4871그래프 탐색" />
         <item itemvalue="Python.등산로 조성 제대로" />
         <item itemvalue="Python.등산로 조성 2" />
         <item itemvalue="Python.111" />
         <item itemvalue="Python.종이붙이기" />
-        <item itemvalue="Python.4866괄호검사" />
       </list>
     </recent_temporary>
   </component>
@@ -360,19 +361,9 @@
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/1949/등산로 조성 제대로.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/1949/등산로 조성 제대로.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/1949/등산로 조성 제대로.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="125" />
+          <url>file://$PROJECT_DIR$/21648/4871그래프 탐색.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
