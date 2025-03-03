@@ -15,28 +15,47 @@ dfs함수는 상하좌우로 다시 델타를 돌면서 자신보다 큰 값을 
 dy = [0, 1, 0, -1]
 dx = [1, 0, -1, 0]
 
-def dfs (check, idx, count,sp) :
+def dfs (check, idx, count,sp,rear) :
     y, x = idx
     check[y][x] = 1
     count += 1
     result = count
+    global max_idx
     for i in range(4) :
         ny = dy[i] + y
         nx = dx[i] + x
         if -1 < ny < N and -1 < nx < N :
             if arr[y][x] <  arr[ny][nx] and check[ny][nx] != 1 :
                 idx = [ny,nx]
-                result = max(result,dfs(check,idx,count,sp))
-                check[ny][nx] = 0
-            if sp != 0 :
-                for j in range(4) :
-                    nny = y + dy[j]
-                    nnx = x + dx[j]
-                    if -1 < nnx < N and -1 < nny < N :
-                        if arr[y][x] - K  < arr[nny][nnx] and check[nny][nnx] != 1 :
+                rear = [y,x]
+                result = max(result,dfs(check,idx,count,sp,rear))
+                # check[y][x] = 0
+    if sp != 0 :
+        for j in range(4) :
+            nny = y + dy[j]
+            nnx = x + dx[j]
+
+            if -1 < nnx < N and -1 < nny < N :
+                if rear :
+                    rear_y, rear_x = rear
+                    for p in range(1,K+1):
+                        if arr[rear_y][rear_x]< arr[y][x] - p  < arr[nny][nnx] and check[nny][nnx] != 1 :
                             idx = [nny,nnx]
                             sp = 0
-                            result = max(result, dfs(check, idx, count, sp))
+                            rear = [y,x]
+                            result = max(result, dfs(check, idx, count, sp, rear))
+                            break
+                else:
+                    for p in range(1,K+1):
+                        if  arr[y][x] - p  < arr[nny][nnx] and check[nny][nnx] != 1 :
+                            idx = [nny,nnx]
+                            sp = 0
+                            rear = [y,x]
+                            result = max(result, dfs(check, idx, count, sp, rear))
+                            max_idx = [y,x]
+                            break
+
+    check[y][x] = 0
 
     return result
 
@@ -47,13 +66,19 @@ for test_case in range(1,T+1) :
     N, K = map(int, input().split())
     arr = [list(map(int,input().split())) for _ in range(N)]
     real = 0
+    top = 0
+    max_idx = []
+    for aa in range(N) :
+        top = max(max(arr[aa]),top)
+
     for i in range(N) :
         for j in range(N) :
             first_count = 0
             check1 = [[0] * N for _ in range(N)]
             road = [i,j]
             serp = 1
-            real_result = dfs(check1, road, first_count,serp)
+            first_rear = []
+            real_result = dfs(check1, road, first_count,serp,first_rear)
             real = max(real,real_result)
     print(f'#{test_case} {real}')
 
