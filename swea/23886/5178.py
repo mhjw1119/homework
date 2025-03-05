@@ -5,11 +5,22 @@ def node1 (n):
     if n == 1 :
         return
     if node[n//2] == 0 :
-        if n//2 == (n-1) // 2 :
+        if n%2 == 1 and n > 1:
             node[(n//2)] = node[n] + node[n-1]
-            node1(n//2)
-        else:
-            node[n // 2] = node[n]
+            node1(n-2)
+
+        if n%2 == 0 :
+            if n == N:
+                node[n // 2] = node[n]
+                node1(n-2)
+            if n < N :
+                node[(n//2)] = node[n] + node[n+1]
+                node1(n-2)
+
+        # else:
+        #     node[n // 2] = node[n]
+        #     node1(n//2)
+    return
 
 
 T = int(input())
@@ -23,4 +34,4 @@ for test_case in range(1, T + 1):
         node[i[0]] = i[-1]
 
     node1(N)
-    print(node[L])
+    print(f'#{test_case} {node[L]}')
