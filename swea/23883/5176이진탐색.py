@@ -9,7 +9,7 @@ def bin_search (start) :
     if start * 2 < i :
         if tree[start * 2]  > tree[start] :
             tree[start],tree[start * 2 ] = tree[start*2], tree[start]
-    if start * 2 + 1< i:
+    if (start * 2) + 1< i:
 
         if tree[start]  > tree[(start * 2) + 1 ] :
             tree[start], tree[(start * 2) + 1] = tree[(start * 2) + 1 ], tree[start]
@@ -25,4 +25,4 @@ for tc in range(1, 1+T) :
     for i in range(1,N+1) :
         tree[i] = i
         bin_search(i//2)
-    print(N//2 + 1 ,tree[N//2])
+    print(tree[1] ,tree[N//2])
