@@ -3,29 +3,57 @@ sys.stdin = open('input.txt', 'r')
 import heapq
 import math
 
+
+'''
+첫 정 점에서 시작한다. 
+해당 정점을 들렸다는 표시를 한다.
+그 정점 말고 다른 정점들을 다 확인하면서 거리값을 계산하여 힙에다 다 넣는다.
+그 거리값들중에 가장 작은 값과 인덱스를 다시 힙에 넣는다.
+반복한다
+'''
+
 T = int(input())
 
-def di():
-    backup = [(0,0,0)]
+def di(first_x, first_y):
+    backup = [(0,0,first_x,first_y)]
+    check = [0] * N
     cnt = 0
     while backup :
-        weight, heap_x, heap_y = heapq.heappop(backup)
-        check[cnt] = 1
-        cnt += 1
+        heap_idx, weight, heap_x, heap_y = heapq.heappop(backup)
+        # check[heap_idx] = 1
 
+
+        if weight < result[heap_idx] :
+            result[heap_idx] = weight
+        else:
+            continue
+        check[heap_idx] = 1
 
         for ii in range(N) :
+            back = 0
             if check[ii] == 1 :
                 continue
+            # if ny == heap_y and nx == heap_x :
+            #     continue
             nx = idx[ii][0]
             ny = idx[ii][1]
+            # if ny == heap_y and nx == heap_x :
+            #     continue
             if nx == heap_x or ny == heap_y :
-                weight += E * ((abs(heap_x - nx) + abs(heap_y - ny)) ** 2)
+                back = weight + (E * ((abs(heap_x - nx) + abs(heap_y - ny)) ** 2))
             else:
-                weight += E * math.sqrt((abs(heap_x - nx) + abs(heap_y - ny)))
+                length = math.sqrt(abs(heap_x - nx)**2 + abs(heap_y - ny)**2)
+                back = weight+ (E * (length ** 2))
+                # if length > abs(heap_x - nx) and length > abs(heap_y - ny) :
+                #     weight += E * (length ** 2)
+                # else :
+                #     if abs(heap_x - nx) > abs(heap_y - ny) :
+                #         weight += E * math.sqrt(abs(heap_x - nx)**2 - abs(heap_y - ny)**2)
+                #     else:
+                #         weight += E * math.sqrt((abs(heap_y - ny)**2) - (abs(heap_x - nx)**2))
 
-            heapq.heappush(backup, (weight, idx[ii][0], idx[ii][1]))
-    return weight
+            heapq.heappush(backup, (ii, back , idx[ii][0], idx[ii][1]))
+    return result[-1]
 
 for tc in range( 1, T + 1 ) :
     N = int(input())
@@ -35,6 +63,10 @@ for tc in range( 1, T + 1 ) :
     for i in range(N):
         idx[i].append(x[i])
         idx[i].append(y[i])
-    check = [0] * N
+
+    result = [100000000000000000000000000000000000000000] * N
     E = float(input())
-    print(di())
+    real_result = 1000000000000000000000000000000000000000000000000000000000
+    for f_x, f_y in idx :
+        real_result = min(real_result,int(di(f_x,f_y)))
+    print(real_result)
