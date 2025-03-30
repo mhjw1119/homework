@@ -13,32 +13,32 @@ import math
 '''
 
 T = int(input())
-def distance (x,y) :
-    return math.sqrt(x ** 2 + y ** 2)
+def distance (xx,yy) :
+    result = xx ** 2 + yy ** 2
+    return result
+
+def MST (tax) :
+    pq = [(0,0)]
+    visit = [0] * N
+    min_cost = 0
+
+    while pq :
+        cost, node = heapq.heappop(pq)
+
+        if visit[node]:
+            continue
+
+        visit[node] = 1
+        min_cost += cost
+
+        for next_node in range(N) :
+            if visit[next_node] :
+                continue
+            next_cost = distance(abs(x[node]-x[next_node]),abs(y[node]-y[next_node])) * E
+            heapq.heappush(pq,(next_cost, next_node))
+    return round(min_cost)
 
 
-def di():
-    back = [0,0,None]
-    check = set()
-
-    while back :
-        weight, now_node, pre_node = heapq.heappop(back)
-
-        if pre_node is not None :                   # 첫 번째 순회인지 확인
-            check.add(pre_node)
-            now_x, now_y = idx_dict[now_node]
-            most_short_distance = int('inf')
-            most_short_idx = None
-            for next_key in range(N) :          # 정점들중에 가장 가까운 거리값의 키값 찾기
-                if next_key == now_node or next_key == pre_node :       # 자기 자신과 바로 직전에 노드면은 안됨
-                    continue
-                pre_x, pre_y = idx_dict[next_key]
-                now_distance = distance(abs(now_x-pre_x),abs(now_y-pre_y))
-
-                if most_short_distance > now_distance :     # 가장 짧은 거리 찾으면 거리랑 인덱스값 저장
-                    most_short_distance = now_distance
-                    most_short_idx = next_key
-        heapq.heappush(back,(weight+most_short_distance, next_key, now_node))
 
 
 for tc in range( 1, T + 1 ) :
@@ -46,9 +46,4 @@ for tc in range( 1, T + 1 ) :
     x = list(map(int, input().split()))
     y = list(map(int, input().split()))
     E = float(input())
-    idx_dict = {}
-    for i in range(N):
-        idx_dict[i] = [x[i],y[i]]
-    real_result = 1000000000000000000000000000000000000000000000000000000000
-    # print(idx_dict)
-    # print(f'#{tc} {real_result}')
+    print(f'#{tc} {MST(E)}')
